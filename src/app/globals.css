@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #003580;
+  --color-secondary: #2a77bd;
+  --color-yellow: #f9b121;
+  --color-black: #060709;
+  --color-green: #0da84c;
+  --color-red: #f02c30;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+body {
+  color: var(--color-black);
+  background: #ffffff;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-content px-6 md:px-8;
+}
+
+.section-y {
+  @apply py-16 md:py-24;
+}
+
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-btn focus:bg-primary focus:px-4 focus:py-3 focus:text-white;
+}
+
+.star-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #003580, #2a77bd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
