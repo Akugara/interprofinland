@@ -59,7 +59,7 @@ export const EXTERNAL_LINKS = {
   membershipApplication:
     "https://form.jotform.com/InterProFinland/membership-application-form",
   mentorApplication:
-    "https://form.jotform.com/InterProFinland/mentor-application-form",
+    "https://form.jotform.com/InterProFinland/apply-to-become-a-mentor",
   facebookPage: "https://www.facebook.com/interprofinland",
   facebookGroup: "https://www.facebook.com/groups/interprofinland",
   instagram: "https://www.instagram.com/interprofinland/",
