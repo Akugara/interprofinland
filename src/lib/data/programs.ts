@@ -109,11 +109,7 @@ export const programDetails: ProgramDetail[] = [
       "Specialists who have gone through the same process themselves guide new applicants through every stage, step by step, so no one has to navigate it alone.",
       "Degree AMPLIFY was recognized as a finalist in the European Network of Innovation for Inclusion's VII Call for Good Practices, in the socio-labour inclusion category.",
     ],
-    cta: {
-      label: "Apply to Degree AMPLIFY",
-      href: "https://form.jotform.com/InterProFinland/degree-amplify-application",
-      external: true,
-    },
+    cta: { label: "Contact Us", href: "/contact" },
   },
   {
     slug: "one-mentor-one",
