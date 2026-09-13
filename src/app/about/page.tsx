@@ -7,7 +7,7 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { values } from "@/lib/data/values";
-import { team, chairperson } from "@/lib/data/team";
+import { team, chairperson, founder } from "@/lib/data/team";
 import { LinkedinIcon } from "@/components/icons/SocialIcons";
 
 export const metadata: Metadata = {
@@ -216,16 +216,50 @@ export default function AboutPage() {
             title="Meet the Team"
             description="We are made up of an amazing team of staff, interns and volunteers, working either backstage or upfront to help bring the association's vision to light. You are welcome to join the team."
           />
-          <div className="mx-auto mt-14 max-w-3xl space-y-6">
+          <RevealOnScroll delay={0.05} className="mx-auto mt-14 max-w-3xl">
+            <Card className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
+              <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-full border-2 border-white">
+                <Image
+                  src={founder.photo}
+                  alt={founder.name}
+                  fill
+                  sizes="112px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-h3-lg font-semibold text-ink">
+                  {founder.name}
+                </h3>
+                <p className="mt-1 text-sm font-semibold text-secondary">
+                  {founder.role}
+                </p>
+                <p className="mt-3 text-body-lg text-gray-600">{founder.bio}</p>
+              </div>
+              {founder.linkedin && (
+                <a
+                  href={founder.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${founder.name} on LinkedIn`}
+                  className="focus-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
+                >
+                  <LinkedinIcon className="h-4 w-4" />
+                </a>
+              )}
+            </Card>
+          </RevealOnScroll>
+
+          <div className="mx-auto mt-6 grid max-w-3xl grid-cols-1 gap-6 lg:grid-cols-2">
             {team.map((member, i) => (
-              <RevealOnScroll key={member.name} delay={i * 0.05}>
-                <Card className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
-                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border-2 border-white">
+              <RevealOnScroll key={member.name} delay={0.1 + i * 0.05}>
+                <Card className="flex h-full flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
+                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-white">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
-                      sizes="80px"
+                      sizes="96px"
                       className="object-cover"
                     />
                   </div>
@@ -237,18 +271,18 @@ export default function AboutPage() {
                       {member.role}
                     </p>
                     <p className="mt-2 text-body text-gray-600">{member.bio}</p>
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} on LinkedIn`}
+                        className="focus-ring mt-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
+                      >
+                        <LinkedinIcon className="h-4 w-4" />
+                      </a>
+                    )}
                   </div>
-                  {member.linkedin && (
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} on LinkedIn`}
-                      className="focus-ring flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
-                    >
-                      <LinkedinIcon className="h-4 w-4" />
-                    </a>
-                  )}
                 </Card>
               </RevealOnScroll>
             ))}

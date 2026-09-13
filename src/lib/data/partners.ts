@@ -15,6 +15,9 @@ export const partners: Partner[] = [
   { name: "KYKY Today", logo: "/logos/partners/kyky.png" },
   { name: "International House Pori" },
   { name: "Nicehearts ry", logo: "/logos/partners/nicehearts.jpg" },
+  { name: "AMA — Arktiset Maahanmuuttajat", logo: "/logos/partners/ama.png" },
+  { name: "IWWOF", logo: "/logos/partners/iwwof.png" },
+  { name: "Prizztech", logo: "/logos/partners/prizztech.png" },
 ];
 
 // Networks & accreditation bodies InterProFinland is a member of.

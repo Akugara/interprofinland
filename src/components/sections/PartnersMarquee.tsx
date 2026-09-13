@@ -4,19 +4,16 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { partners, networkMemberships } from "@/lib/data/partners";
 
 export function PartnersMarquee() {
-  const track = [...partners, ...partners];
-
   return (
-    <section className="section-y overflow-hidden bg-gray-50">
+    <section className="section-y border-t border-gray-100 bg-white">
       <div className="container-page">
         <SectionHeading eyebrow="Community" title="Our Partners & Networks" />
-      </div>
-      <div className="relative mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="marquee-track">
-          {track.map((partner, i) => (
+
+        <div className="mx-auto mt-14 grid max-w-4xl grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
+          {partners.map((partner) => (
             <div
-              key={`${partner.name}-${i}`}
-              className="mx-4 flex h-20 w-48 shrink-0 items-center justify-center gap-2 rounded-card bg-white p-4 grayscale transition-all duration-200 hover:grayscale-0"
+              key={partner.name}
+              className="flex h-16 items-center justify-center grayscale transition-all duration-200 hover:grayscale-0"
             >
               {partner.logo ? (
                 <div className="relative h-full w-full">
@@ -24,7 +21,7 @@ export function PartnersMarquee() {
                     src={partner.logo}
                     alt={partner.name}
                     fill
-                    sizes="180px"
+                    sizes="140px"
                     className="object-contain"
                   />
                 </div>
@@ -37,23 +34,24 @@ export function PartnersMarquee() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="container-page mt-10 flex flex-col items-center gap-4">
-        <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
-          Also affiliated with
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          {networkMemberships.map((network) => (
-            <div key={network.name} className="relative h-8 w-24">
-              <Image
-                src={network.logo}
-                alt={network.name}
-                fill
-                sizes="96px"
-                className="object-contain"
-              />
-            </div>
-          ))}
+
+        <div className="mt-16 flex flex-col items-center gap-6 border-t border-gray-100 pt-12">
+          <p className="text-sm font-medium uppercase tracking-widest text-gray-400">
+            Also affiliated with
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-10">
+            {networkMemberships.map((network) => (
+              <div key={network.name} className="relative h-14 w-36">
+                <Image
+                  src={network.logo}
+                  alt={network.name}
+                  fill
+                  sizes="144px"
+                  className="object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ import {
   Languages,
   Users,
   Presentation,
+  ClipboardCheck,
 } from "lucide-react";
 
 export type ProgramOverview = {
@@ -43,7 +44,7 @@ export const programsOverview: ProgramOverview[] = [
     icon: Briefcase,
     title: "Career Guidance",
     summary:
-      "CV clinics, coaching, and job market insights tailored to Finland.",
+      "Build your career pathway, assess your skills, and grow your professional network in Finland.",
   },
   {
     slug: "networking",
@@ -72,7 +73,6 @@ export type ProgramDetail = {
   eyebrow: string;
   title: string;
   description: string[];
-  image?: string;
   cta: { label: string; href: string; external?: boolean };
 };
 
@@ -83,8 +83,19 @@ export const programDetails: ProgramDetail[] = [
     eyebrow: "Info webinars & workshops",
     title: "Get Acquainted Info Webinars and Workshops",
     description: [
-      "A series of info webinars and workshops focused on the Finnish labour market, working culture, job search strategies, and profession-specific information.",
-      "A practical starting point for newcomers who want to understand how things work in Finland before diving into a job search.",
+      "Become familiar with the Finnish labour market, working culture, job search process, and information specific to your own profession.",
+      "It's important to understand how qualifications gained abroad can be put to good use in Finland, and how they compare to Finnish terminology and ranking systems.",
+    ],
+    cta: { label: "Contact Us", href: "/contact" },
+  },
+  {
+    slug: "recognition-support",
+    icon: ClipboardCheck,
+    eyebrow: "Qualification recognition",
+    title: "Recognition of Previous Qualifications Support",
+    description: [
+      "We offer step-by-step individual support through the recognition of previous qualifications process — from preparation to the final application, and beyond.",
+      "We help participants find suitable educational institutions as they take concrete steps toward completing any complementary courses recommended by the recognition authority.",
     ],
     cta: { label: "Contact Us", href: "/contact" },
   },
@@ -93,11 +104,10 @@ export const programDetails: ProgramDetail[] = [
     icon: GraduationCap,
     eyebrow: "Ongoing yearly project",
     title: "Degree AMPLIFY — Qualification Recognition",
-    image: "/images/programs/degree-amplify-finalist.png",
     description: [
-      "Degree AMPLIFY is our flagship, ongoing yearly project providing step-by-step guidance through Finland's qualification recognition process.",
-      "Participants receive one-on-one mentoring from professionals with similar experiences, and gain access to the Qualifications Recognition Handbook — a practical guide built from real cases.",
-      "Degree AMPLIFY was named a finalist in the European Network for Innovation for Inclusion's VII Call for Good Practices.",
+      "Degree AMPLIFY is an ongoing yearly project that helps international professionals in Finland better understand the process of recognizing their foreign diplomas.",
+      "Specialists who have gone through the same process themselves guide new applicants through every stage, step by step, so no one has to navigate it alone.",
+      "Degree AMPLIFY was recognized as a finalist in the European Network of Innovation for Inclusion's VII Call for Good Practices, in the socio-labour inclusion category.",
     ],
     cta: {
       label: "Apply to Degree AMPLIFY",
@@ -108,11 +118,11 @@ export const programDetails: ProgramDetail[] = [
   {
     slug: "one-mentor-one",
     icon: Handshake,
-    eyebrow: "Mentorship program",
+    eyebrow: "Mentorship & peer support",
     title: "One Mentor One — Mentorship Program",
     description: [
-      "One Mentor One is a structured mentoring initiative pairing international professionals with experienced mentors.",
-      "Mentors share experiences, widen perspectives, and offer practical career and personal development tips throughout the journey.",
+      "Our mentorship project gives participants the opportunity to benefit from the knowledge and experience of established professionals in their chosen field.",
+      "Peer support club sessions are held both in person and online, each focused on a specific area, to provide an all-round support system for participants.",
     ],
     cta: {
       label: "Become a Mentor or Find a Mentor",
@@ -125,19 +135,19 @@ export const programDetails: ProgramDetail[] = [
     eyebrow: "Career development",
     title: "Career Guidance & Networking",
     description: [
-      "We run CV clinics, personal coaching sessions, and Career Connect meet & greet events throughout the year.",
-      "Labour market seminars, info webinars, and workshops help members understand the Finnish job market and build the right connections.",
+      "We guide international talents in creating their own unique career pathways, or exploring alternative career paths in Finland.",
+      "We help assess skills, identify strengths, and work through limitations to building a career here, and organize networking events as an opportunity to make new connections and build a professional network.",
     ],
     cta: { label: "Contact Us", href: "/contact" },
   },
   {
     slug: "kielikaverit",
     icon: Languages,
-    eyebrow: "Finnish language club",
+    eyebrow: "Finnish language club · Beginner & advanced",
     title: "Kielikaverit — Finnish Language Club",
     description: [
-      "Kielikaverit is a peer support language club for practicing Finnish in a relaxed, community-driven setting.",
-      "No pressure, no exams — just real conversation practice alongside other learners and native speakers.",
+      "Our Finnish Language Club sessions offer a relaxed, friendly environment to connect with like-minded people — with vocabulary-building exercises, discussions about Finnish history, and team-building activities. Snacks and beverages are provided.",
+      "Sessions run at our office at Otavankatu 5A, first floor, with both beginner and advanced levels available.",
     ],
     cta: { label: "Join the Language Club", href: "/get-involved" },
   },
@@ -147,8 +157,8 @@ export const programDetails: ProgramDetail[] = [
     eyebrow: "Integration project",
     title: "Connect & Integrate Project",
     description: [
-      "Peer support clubs designed to facilitate integration into Finnish society and professional life.",
-      "Members build local networks, practice cultural know-how, and find their footing faster with peer support.",
+      "A peer support club run in cooperation with International House Pori, creating a supportive environment where members can learn, grow, and connect with one another as they integrate into Finnish society.",
+      "Each session focuses on a specific area of integration. Sessions are held twice a month and sponsored by the City of Pori.",
     ],
     cta: { label: "Get Involved", href: "/get-involved" },
   },

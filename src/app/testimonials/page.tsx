@@ -18,7 +18,7 @@ export default function TestimonialsPage() {
       <PageHero title="Success Stories" subtitle="Real journeys from members of our community." />
 
       <section className="section-y bg-white">
-        <div className="container-page mx-auto max-w-2xl space-y-6">
+        <div className="container-page mx-auto grid max-w-5xl grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-2">
           {testimonials.map((testimonial, i) => (
             <RevealOnScroll key={testimonial.name} delay={(i % 4) * 0.06}>
               <TestimonialCard

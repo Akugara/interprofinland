@@ -8,7 +8,6 @@ const routes = [
   "/about",
   "/programs",
   "/magazine",
-  "/upcoming-events",
   "/testimonials",
   "/get-involved",
   "/contact",

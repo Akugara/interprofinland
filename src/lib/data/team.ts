@@ -7,6 +7,14 @@ export type TeamMember = {
 };
 
 // Real team roster, bios, and LinkedIn links, pulled from interprofinland.fi/about-us.
+export const founder: TeamMember = {
+  name: "Olivia Kumpula",
+  role: "CEO & Founder",
+  bio: "Olivia founded InterProFinland in 2021 after her own experience as an expat navigating the Finnish workforce. Through her expat blog and 'The Finns and Foreigners Club', she saw firsthand how many international professionals face the same barriers — and built InterProFinland to close that gap.",
+  photo: "/images/team/olivia-kumpula.jpg",
+  linkedin: "https://www.linkedin.com/in/oliviakumpula/",
+};
+
 export const chairperson: TeamMember = {
   name: "Henriika Ilkko",
   role: "Chairperson",
@@ -15,13 +23,6 @@ export const chairperson: TeamMember = {
 };
 
 export const team: TeamMember[] = [
-  {
-    name: "Olivia Kumpula",
-    role: "CEO & Founder",
-    bio: "Founded InterProFinland in 2021, driven by her own experience as an expat navigating the Finnish workforce.",
-    photo: "/images/team/olivia-kumpula.jpg",
-    linkedin: "https://www.linkedin.com/in/oliviakumpula/",
-  },
   {
     name: "Matthew Bowen",
     role: "CAO",

@@ -57,10 +57,6 @@ const config: Config = {
         "section-y-mobile": "64px",
       },
       keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
         "gradient-shift": {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
@@ -75,7 +71,6 @@ const config: Config = {
         },
       },
       animation: {
-        marquee: "marquee 32s linear infinite",
         "gradient-shift": "gradient-shift 12s ease infinite",
         "float-slow": "float-slow 8s ease-in-out infinite",
         "bounce-chevron": "bounce-chevron 1.8s ease-in-out infinite",

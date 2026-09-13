@@ -32,9 +32,12 @@ export const values: Value[] = [
   },
 ];
 
+// Matches the live counter on interprofinland.fi (as of this writing).
+// These are point-in-time community stats, not derived figures — update
+// periodically as the real numbers grow.
 export const stats = [
-  { value: 500, suffix: "+", label: "Professionals Supported" },
-  { value: 15, suffix: "+", label: "Partner Organizations" },
-  { value: 20, suffix: "+", label: "Nationalities Represented" },
+  { value: 1800, suffix: "+", label: "Professionals" },
+  { value: 80, suffix: "+", label: "Professions" },
+  { value: 74, suffix: "+", label: "Nationalities" },
   { value: 2021, suffix: "", label: "Founded" },
 ];

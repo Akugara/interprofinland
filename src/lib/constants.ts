@@ -36,7 +36,6 @@ export const NAV_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Magazine", href: "/magazine" },
-  { label: "Events", href: "/upcoming-events" },
   { label: "Testimonials", href: "/testimonials" },
   { label: "Get Involved", href: "/get-involved" },
   { label: "Contact", href: "/contact" },
@@ -46,7 +45,6 @@ export const FOOTER_QUICK_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "Programs", href: "/programs" },
   { label: "Magazine", href: "/magazine" },
-  { label: "Upcoming Events", href: "/upcoming-events" },
   { label: "Testimonials", href: "/testimonials" },
 ] as const;
 
