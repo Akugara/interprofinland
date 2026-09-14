@@ -26,9 +26,10 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
-// Set NEXT_PUBLIC_FORM_ENDPOINT (e.g. a Formspree or Web3Forms endpoint) to send
-// submissions live. Without it, the form runs in demo mode for local QA.
-const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
+// Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY (from web3forms.com) to send submissions
+// live. Without it, the form runs in demo mode for local QA.
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
 const inputClasses =
   "focus-ring w-full rounded-btn border border-gray-100 bg-gray-50 px-4 py-3 text-[15px] text-ink placeholder:text-gray-400";
@@ -46,13 +47,20 @@ export function ContactForm() {
   const onSubmit = async (values: FormValues) => {
     setSubmitError(false);
     try {
-      if (FORM_ENDPOINT) {
-        const response = await fetch(FORM_ENDPOINT, {
+      if (WEB3FORMS_ACCESS_KEY) {
+        const response = await fetch(WEB3FORMS_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(values),
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            name: values.name,
+            email: values.email,
+            subject: `InterProFinland contact form — ${values.subject}`,
+            message: values.message,
+          }),
         });
-        if (!response.ok) throw new Error("Submission failed");
+        const result = await response.json();
+        if (!response.ok || !result.success) throw new Error("Submission failed");
       } else {
         await new Promise((resolve) => setTimeout(resolve, 700));
       }

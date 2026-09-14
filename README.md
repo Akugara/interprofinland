@@ -31,7 +31,7 @@ npm run lint
 
 Copy `.env.example` to `.env.local` and set:
 
-- `NEXT_PUBLIC_FORM_ENDPOINT` — a Formspree/Web3Forms-style endpoint for the contact form. Without it, the form runs in local demo mode (shows a success state but doesn't send anywhere).
+- `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` — an access key from [web3forms.com](https://web3forms.com), tied to the destination inbox for the contact form. Without it, the form runs in local demo mode (shows a success state but doesn't send anywhere).
 
 ## Project Structure
 
